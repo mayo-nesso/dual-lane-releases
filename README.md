@@ -63,55 +63,6 @@ If switching apps causes macOS to reorder your Spaces, disable:
 
 ---
 
-## Project structure
-
-```
-DualLane/
-  App/
-    DualLaneApp.swift              — @main entry point
-    AppDelegate.swift              — Bootstraps all controllers, wires callbacks
-    AppVersion.swift               — Version constant read from Info.plist
-  Core/
-    WorkspaceProviding.swift       — RunningAppRepresentable + WorkspaceProviding protocols
-    LaneManager.swift              — Lane assignment, activation order
-    LanePersistence.swift          — Lane assignment persistence (Application Support)
-    SettingsStore.swift            — User preferences (icon size, position, keys, display)
-  HotKeys/
-    HotKeyMonitor.swift            — CGEventTap global hotkey interception
-  UI/
-    Switcher/
-      OverlayWindowController.swift  — HUD window lifecycle and dynamic sizing
-      SwitcherViewModel.swift        — Switcher state (selected app, active lane, navigation)
-      SwitcherOverlayView.swift      — SwiftUI overlay HUD
-    MenuBar/
-      MenuBarController.swift        — NSStatusItem + popover
-      LaneConfigView.swift           — Lane configuration UI
-    Settings/
-      SettingsWindowController.swift — Settings window lifecycle
-      SettingsView.swift             — Settings UI (General and Keys tabs)
-
-DualLaneTests/
-  TestHelpers.swift                  — FakeApp, MockWorkspace shared test doubles
-  SwitcherViewModelTests.swift       — Unit: navigation, selection, lane switching
-  LaneManagerTests.swift             — Unit: bundleID assignment, lane resolution, persistence
-  LaneManagerAssignPIDTests.swift    — Unit: single vs multi-instance PID override logic
-  MoveSelectedToNextLaneTests.swift  — Unit: promote/demote, index clamping
-  LaneManagerIntegrationTests.swift  — Integration: currentEntries() + VM end-to-end
-  ActivationOrderTests.swift         — Unit: AX call order for activation
-  IconSizeTests.swift                — Unit: icon size formula
-  ResolveKeyActionTests.swift        — Unit: key-action resolution
-  ScrollNavigationTests.swift        — Unit: scroll-wheel navigation
-  SettingsStoreTests.swift           — Unit: settings persistence and defaults
-  SwitchLaneHintTests.swift          — Unit: dynamic hint text for configured keys
-
-scripts/
-  run.sh                         — Test → build → install → launch
-  build_release.sh               — Build a signed, notarized release DMG
-  release.sh                     — Tag and publish a GitHub release
-```
-
----
-
 ## Settings
 
 Open the Settings window from the menu bar popover header. The **General** tab exposes:
