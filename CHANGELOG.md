@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.1-alpha.3] - 2026-04-24
+
 ## [1.2.1-alpha.2] - 2026-04-24
 
 ## [1.2.1-alpha.1] - 2026-04-24
@@ -78,7 +80,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Two-lane overlay (Primary and Secondary) with app icons; navigate forward/backward with Cmd+Tab / Cmd+Shift+Tab and switch lanes with arrow keys.
 - Release Cmd to activate the selected app; Esc to dismiss without switching.
 - Menu bar icon with a Lane Config popover for assigning apps to lanes; assignments persist across launches.
-[Unreleased]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.2.1-alpha.2...HEAD
+[Unreleased]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.2.1-alpha.3...HEAD
+[1.2.1-alpha.3]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.2.1-alpha.2...v1.2.1-alpha.3
 [1.2.1-alpha.2]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.2.1-alpha.1...v1.2.1-alpha.2
 [1.2.1-alpha.1]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.2.0...v1.2.1-alpha.1
 [1.2.0]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.1.1...v1.2.0
