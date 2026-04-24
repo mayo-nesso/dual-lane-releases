@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-04-24
+
+### Added
+
+- New "Always show app names" toggle in Settings → Display. When off (default), only the selected app's name is shown, matching native macOS switcher behaviour. When on, all names are visible at once.
+
+### Fixed
+
+- Switcher opening slowly (~3 s) when Unity Editor (or other apps with multiple instances sharing a bundle ID) was running — window title lookups via Accessibility API now happen lazily on a background thread only for the currently selected app, instead of blocking the main thread for every app on each open.
+- App names are now hidden for non-selected cells (matching native macOS switcher behaviour); the window title of a duplicate-instance app is shown only when that app is selected.
+
 ## [1.2.1-alpha.5] - 2026-04-24
 
 ## [1.2.1-alpha.4] - 2026-04-24
@@ -84,7 +95,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Two-lane overlay (Primary and Secondary) with app icons; navigate forward/backward with Cmd+Tab / Cmd+Shift+Tab and switch lanes with arrow keys.
 - Release Cmd to activate the selected app; Esc to dismiss without switching.
 - Menu bar icon with a Lane Config popover for assigning apps to lanes; assignments persist across launches.
-[Unreleased]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.2.1-alpha.5...HEAD
+[Unreleased]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.2.1-alpha.5...v1.3.0
 [1.2.1-alpha.5]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.2.1-alpha.4...v1.2.1-alpha.5
 [1.2.1-alpha.4]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.2.1-alpha.3...v1.2.1-alpha.4
 [1.2.1-alpha.3]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.2.1-alpha.2...v1.2.1-alpha.3
