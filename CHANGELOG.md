@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.1] - 2026-07-23
+
+## [1.4.1-rc.3] - 2026-07-23
+
+### Fixed
+
+- Duplicate instance badges could still shift when a new instance launched with a PID the OS had reused from an already-closed process — badge order was recalculated from launchDate/PID on every switcher open. Badge order is now assigned once per process, the moment it's first discovered, and never recalculated, so already-open instances keep their badge regardless of PID.
+
+## [1.4.1-rc.2] - 2026-06-05
+
+## [1.4.1-rc.1] - 2026-06-05
+
+### Fixed
+
+- Year in Settings → About no longer shows thousand-separator comma (e.g. "2,026") on Spanish-locale systems.
+- Duplicate instance badges are now ordered by launch date instead of PID, so badge numbers don't arbitrarily shift when PID values change — the oldest instance always stays index 0 (no badge).
+
+### Changed
+
+- Duplicate app instances now have progressively different saturation and opacity, so each additional instance is visually distinct from the others.
+
 ## [1.4.0] - 2026-05-01
 
 ### Fixed
@@ -91,7 +112,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Two-lane overlay (Primary and Secondary) with app icons; navigate forward/backward with Cmd+Tab / Cmd+Shift+Tab and switch lanes with arrow keys.
 - Release Cmd to activate the selected app; Esc to dismiss without switching.
 - Menu bar icon with a Lane Config popover for assigning apps to lanes; assignments persist across launches.
-[Unreleased]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.4.0...HEAD
+[Unreleased]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.4.1...HEAD
+[1.4.1]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.4.1-rc.3...v1.4.1
+[1.4.1-rc.3]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.4.1-rc.2...v1.4.1-rc.3
+[1.4.1-rc.2]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.4.1-rc.1...v1.4.1-rc.2
+[1.4.1-rc.1]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.4.0...v1.4.1-rc.1
 [1.4.0]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.3.1-alpha.1...v1.4.0
 [1.3.1-alpha.1]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.3.0...v1.3.1-alpha.1
 [1.3.0]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.2.1-alpha.5...v1.3.0
