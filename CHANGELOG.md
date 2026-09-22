@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.0] - 2026-09-22
+
+## [1.5.0-rc.5] - 2026-07-24
+
+### Added
+
+- The menu bar popover now shows the same duplicate-instance badge numbers (2, 3, ...) as the Cmd+Tab switcher, so a repeated app is recognizable at a glance in both places.
+
+## [1.5.0-rc.4] - 2026-07-23
+
+Consolidates 1.5.0-rc.1 through rc.4 — earlier RCs shipped this feature with display-refresh bugs, all fixed here.
+
+### Added
+
+- Click an app's name in the menu bar list to rename how it's displayed there. Hover shows the text-edit cursor, Enter saves and repaints the row immediately, Escape (or losing focus any other way) discards, and an empty name reverts to the original. The custom label also shows in the Cmd+Tab switcher, including for duplicate instances resolved by window title. The override is per running instance and session-only — it's not saved to disk and is gone once that instance quits or DualLane restarts.
+
+### Fixed
+
+- In-place name changes (the new rename, and the switcher's pre-existing lazy window-title resolution for duplicate instances) could fail to repaint until the view was rebuilt — `AppEntry` equality compared only the pid, so SwiftUI considered a renamed entry identical to the old one and skipped the redraw.
+
 ## [1.4.1] - 2026-07-23
 
 ## [1.4.1-rc.3] - 2026-07-23
@@ -112,7 +132,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Two-lane overlay (Primary and Secondary) with app icons; navigate forward/backward with Cmd+Tab / Cmd+Shift+Tab and switch lanes with arrow keys.
 - Release Cmd to activate the selected app; Esc to dismiss without switching.
 - Menu bar icon with a Lane Config popover for assigning apps to lanes; assignments persist across launches.
-[Unreleased]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.4.1...HEAD
+[Unreleased]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.5.0...HEAD
+[1.5.0]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.5.0-rc.5...v1.5.0
+[1.5.0-rc.5]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.5.0-rc.4...v1.5.0-rc.5
+[1.5.0-rc.4]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.4.1...v1.5.0-rc.4
 [1.4.1]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.4.1-rc.3...v1.4.1
 [1.4.1-rc.3]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.4.1-rc.2...v1.4.1-rc.3
 [1.4.1-rc.2]: https://github.com/mayo-nesso/dual-lane-macos/compare/v1.4.1-rc.1...v1.4.1-rc.2
